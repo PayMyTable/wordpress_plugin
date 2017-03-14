@@ -18,7 +18,7 @@ if ( ! defined( 'WPINC' ) ) {
 class PayMyTable_Shortcode {
   public function register() {
     add_shortcode('PayMyTableOrder', 'PayMyTableOrderRender');
-    add_shortcode('PayMyTableBooking', 'PayMyTableOrderRender');
+    add_shortcode('PayMyTableBooking', 'PayMyTableBookingRender');
   }
 
 }

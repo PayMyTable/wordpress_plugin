@@ -3,13 +3,9 @@
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
-/**
- * Flowplayer Output Class
- *
- * @package Flowplayer5_Shortcode
- * @author  Ulrich Pogson <ulrich@pogson.ch>
- *
- * @since 1.3.0
+
+ /**
+ * Note: all $atts keys are in lowercase, even if the shortcode use different case.
  */
 class PayMyTable_Renderer {
 
@@ -17,7 +13,7 @@ class PayMyTable_Renderer {
     $options = [
       "env" => isset($atts["env"]) ? $atts["env"] : "PROD",
       "color" => $atts["color"],
-      "apiConsumer" => $atts["apiConsumer"],
+      "apiConsumer" => $atts["apiconsumer"],
       "modes" => $atts["modes"],
     ];
 
@@ -45,14 +41,14 @@ class PayMyTable_Renderer {
     $options = [
       "env" => isset($atts["env"]) ? $atts["env"] : "PROD",
       "color" => $atts["color"],
-      "apiConsumer" => $atts["apiConsumer"],
-			"restaurantId" => $atts["restaurantId"],
+      "apiConsumer" => $atts["apiconsumer"],
+			"restaurantId" => $atts["restaurantid"],
     ];
 
 		$js = "
 			PMT.initBookingPlugin({
 				env: '{$options['env']}',
-				id: 'PMTIframeOrder',
+				id: 'PMTIframeBooking',
 				apiConsumer: '{$options['apiConsumer']}',
 				color: '{$options['color']}',
 				restaurantId: '{$options['restaurantId']}',
@@ -65,7 +61,7 @@ class PayMyTable_Renderer {
 
 
 		return '
-			<div id="PMTIframeOrder"></div>
+			<div id="PMTIframeBooking"></div>
 		';
 
 	}
