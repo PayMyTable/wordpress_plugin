@@ -66,10 +66,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-paymytable.php';
  *
  * @since    1.0.0
  */
-function run_plugin_name() {
+function run_paymytable_plugin() {
 
 	$plugin = new PayMyTable();
 	$plugin->run();
 
 }
-run_plugin_name();
+run_paymytable_plugin();
