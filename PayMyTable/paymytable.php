@@ -34,7 +34,7 @@ if ( ! defined( 'WPINC' ) ) {
  * The code that runs during plugin activation.
  * This action is documented in includes/class-paymytable-activator.php
  */
-function activate_plugin_name() {
+function activate_paymytable_plugin() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-paymytable-activator.php';
 	PayMyTable_Activator::activate();
 }
@@ -43,13 +43,13 @@ function activate_plugin_name() {
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-paymytable-deactivator.php
  */
-function deactivate_plugin_name() {
+function deactivate_paymytable_plugin() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-paymytable-deactivator.php';
 	PayMyTable_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_plugin_name' );
-register_deactivation_hook( __FILE__, 'deactivate_plugin_name' );
+register_activation_hook( __FILE__, 'activate_paymytable_plugin' );
+register_deactivation_hook( __FILE__, 'deactivate_paymytable_plugin' );
 
 /**
  * The core plugin class that is used to define internationalization,
